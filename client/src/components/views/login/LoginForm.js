@@ -1,18 +1,16 @@
 import React from 'react';
 
-import sharedComponent from '../../shared';
-
-const {
-    Header
-} = sharedComponent;
-
 const LoginForm = (props) => {
+  const {
+    isAuthenticUser,
+    loginAttempt
+  } = props;
 
-    return (
-        <div>
-            <Header />
-        </div>
-    );
+  return (
+    <div>
+      <h1>Login Form</h1>
+    </div>
+  );
 };
 
 export default LoginForm;

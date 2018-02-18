@@ -4,66 +4,66 @@ import constants from './constants';
 import logger from './logger';
 
 class Service {
-    constructor() {
-        const token = typeof localStorage !== undefined ? localStorage.getItem('csrf') : '';
-        const client = axios.create({
-            baseURL: constants.common.API.url,
-            headers: {
-                csrf: token || null
-            },
-            timeout: constants.common.API.requestTimeout
-        });
-        client.interceptors.response.use(this.onSuccess, this.onFailure);
+  constructor() {
+    const token = typeof localStorage !== undefined ? localStorage.getItem('csrf') : '';
+    const client = axios.create({
+      baseURL: constants.common.API.url,
+      headers: {
+        csrf: token || null
+      },
+      timeout: constants.common.API.requestTimeout
+    });
+    client.interceptors.response.use(this.onSuccess, this.onFailure);
+  }
+
+  updateToken(token) {
+    this.client.defaults.headers.csrf = token;
+  }
+
+  static onSuccess(response) {
+    logger.debug('Success', response);
+    return response.data;
+  }
+
+  static onFailure(error) {
+    logger.error('Failed', error.config);
+
+    if (error.response) {
+      logger.error('Status', error.response.status);
+      logger.error('Data', error.response.data);
+      logger.error('Headers', error.response.headers);
+    } else if (error.request) {
+      logger.log(error.request);
+    } else {
+      logger.error('Error ', error.message);
     }
 
-    updateToken(token) {
-        this.client.defaults.headers.csrf = token;
-    }
+    return Promise.reject(error.response || error.message);
+  }
 
-    static onSuccess(response) {
-        logger.debug('Success', response);
-        return response.data;
-    }
+  request(options) {
+    return this.client(options);
+  }
 
-    static onFailure(error) {
-        logger.error('Failed', error.config);
+  get(url, options = {}) {
+    return this.client.get(url, options);
+  }
 
-        if (error.response) {
-            logger.error('Status', error.response.status);
-            logger.error('Data', error.response.data);
-            logger.error('Headers', error.response.headers);
-        } else if (error.request) {
-            logger.log(error.request);
-        } else {
-            logger.error('Error ', error.message);
-        }
+  post(url, payload, options = {}) {
+    return this.client.post(url, payload, options);
+  }
 
-        return Promise.reject(error.response || error.message);
-    }
+  put(url, payload, options = {}) {
+    return this.client.put(url, payload, options);
+  }
 
-    request(options) {
-        return this.client(options);
-    }
+  patch(url, payload, options = {}) {
+    return this.client.patch(url, payload, options);
+  }
 
-    get(url, options = {}) {
-        return this.client.get(url, options);
-    }
-
-    post(url, payload, options = {}) {
-        return this.client.post(url, payload, options);
-    }
-
-    put(url, payload, options = {}) {
-        return this.client.put(url, payload, options);
-    }
-
-    patch(url, payload, options = {}) {
-        return this.client.patch(url, payload, options);
-    }
-
-    delete(url, options = {}) {
-        return this.client.delete(url, options);
-    }
+  delete(url, options = {}) {
+    return this.client.delete(url, options);
+  }
 }
 
 const service = new Service();

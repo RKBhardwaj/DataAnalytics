@@ -1,7 +1,7 @@
 import * as common from './constants/common';
 
 const constants = {
-    common
+  common
 };
 
 export default constants;

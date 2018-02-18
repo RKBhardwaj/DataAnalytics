@@ -1,7 +1,9 @@
 import Header from './Header';
+import NavBar from './NavBar';
 
 const sharedComponent = {
-  Header
+  Header,
+  NavBar
 };
 
 export default sharedComponent;

@@ -1,3 +1,3 @@
 export const apis = {
-    'users': '/api/get-users'
-}
+  users: '/api/get-users'
+};
