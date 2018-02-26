@@ -14,6 +14,7 @@ class Service {
       timeout: constants.common.API.requestTimeout
     });
     client.interceptors.response.use(this.onSuccess, this.onFailure);
+    this.client = client;
   }
 
   updateToken(token) {

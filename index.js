@@ -1,8 +1,7 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+//const cors = require('cors');
 const keys = require('./server/config/keys');
 
 //creating an app instance
@@ -12,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 
 //CORS module is for cross site reference
-app.use(cors);
+//app.use(cors);
 
 //Cookie session is middleware which is used to maintain cookies in the system
 app.use(
@@ -22,7 +21,8 @@ app.use(
     })
 );
 
-require('./server/routes')(app);
+require('./server/routes/index')(app);
 
 const port = process.env.port || 5000;
+console.log('Listening on port :', port);
 app.listen(port);

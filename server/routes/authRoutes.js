@@ -4,17 +4,20 @@
 const _ = require('lodash');
 const Path = require('path-parser');
 const URL = require('url');
-const createResponseObj = require('./createResonse');
+const responseObj = require('./createResonse').responseObj;
 
 module.exports = (app) => {
+    app.get('/api/current_user', (req, res) => {
+        res.send(req.user);
+    });
+
     app.post('/api/auth-login', (req, res) => {
-        console.log(req.body);
-        const { username, password } = req.body.loginDetails;
-        const respObj = createResponseObj();
+        const { username, password } = req.body;
+        const respObj = Object.assign({}, responseObj);
         if (username && password) {
             respObj.isSuccess = true;
             respObj.successMsg = 'Valid User';
-            respObj.responseData = res;
+            respObj.responseData = [];
         } else {
             respObj.isError = true;
             respObj.errorMsg = 'Invalid user credentials';

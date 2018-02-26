@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
@@ -8,15 +8,18 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
 
-export default class ToolbarExamplesSimple extends React.Component {
+export default class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       value: 3,
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange = (event, index, value) => this.setState({ value });
+  handleChange(event, index, value) {
+    this.setState({ value });
+  }
 
   render() {
     return (

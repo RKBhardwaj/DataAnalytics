@@ -15,3 +15,7 @@ export const getApiUrl = (link, params) => {
   }
   return url;
 };
+
+export const navigateToRoute = (link) => {
+  history.push(link);
+};
