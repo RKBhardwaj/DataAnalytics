@@ -116,6 +116,22 @@ $z-indexes: (
   "site-footer"
 );
 
+/**** box-shadow ****/
+@mixin box-shadow($horzLength, $vertLength, $blurRadius, $spreadRadius, $shadowColor) {
+    -webkit-box-shadow: $horzLength $vertLength $blurRadius $spreadRadius $shadowColor;
+    -moz-box-shadow: $horzLength $vertLength $blurRadius $spreadRadius $shadowColor;
+    box-shadow: $horzLength $vertLength $blurRadius $spreadRadius $shadowColor;
+}
+
+/*** user-select ****/
+@mixin user-select($prop) {
+    user-select: $prop;
+    -moz-user-select: $prop;
+    -webkit-user-select: $prop;
+    -ms-user-select: $prop;
+}
+
+
 /*** hardware ***/
 @mixin hardware($backface: true, $perspective: 1000) {
   @if $backface {

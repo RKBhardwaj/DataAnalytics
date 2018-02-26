@@ -2,19 +2,19 @@ import * as types from '../actions/types';
 import * as defaultProps from './defaultProps';
 
 const defaultState = {
-  loginDetails: defaultProps.loginDetails
+  users: defaultProps.users
 };
 
-const LoginReducer = (state = defaultState, action) => {
+const UserReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case types.LOGIN_USER:
+    case types.GET_USERS:
       return {
         ...state,
-        loginDetails: action.data
+        users: action.data
       };
     default:
       return state;
   }
 };
 
-export default LoginReducer;
+export default UserReducer;

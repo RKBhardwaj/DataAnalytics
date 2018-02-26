@@ -9,7 +9,7 @@ import configureStore from './store';
 import './stylesheets/main.scss';
 
 ReactDOM.render(
-  <Provider store={configureStore}>
+  <Provider store={configureStore()}>
     <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
       <App />
     </MuiThemeProvider>

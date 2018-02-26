@@ -5,7 +5,7 @@ import logger from './logger';
 
 class Service {
   constructor() {
-    const token = typeof localStorage !== undefined ? localStorage.getItem('csrf') : '';
+    const token = typeof localStorage !== 'undefined' ? localStorage.getItem('csrf') : '';
     const client = axios.create({
       baseURL: constants.common.API.url,
       headers: {

@@ -2,7 +2,7 @@
  * @description will responsible for react setup in app
  */
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
 import Routes from '../routes';
 import history from '../store/history';
