@@ -1,7 +1,9 @@
 import * as common from './constants/common';
+import * as navigation from './constants/navigation';
 
 const constants = {
-  common
+  common,
+  navigation
 };
 
 export default constants;

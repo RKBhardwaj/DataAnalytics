@@ -3,6 +3,26 @@ body {
   padding: 0;
   background: #eeeeee; }
 
+.form-control {
+  padding: 0px;
+  position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  font-weight: inherit;
+  font-stretch: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  opacity: 1;
+  -webkit-tap-highlight-color: transparent;
+  height: 100%; }
+
 /*** push auto ***/
 /*** pseudo ***/
 /*** responsive ***/

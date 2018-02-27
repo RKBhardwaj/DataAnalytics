@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from '../../shared/Header';
 import NavBar from '../../shared/NavBar';
+import SideNavigation from '../../shared/SideNavigation';
 
 const DashboardView = (props) => {
   const {
@@ -10,9 +11,7 @@ const DashboardView = (props) => {
 
   return (
     <div>
-      <Header
-        loggedInUser={user}
-      />
+      <Header loggedInUser={user} />
       <NavBar />
     </div>
   );
