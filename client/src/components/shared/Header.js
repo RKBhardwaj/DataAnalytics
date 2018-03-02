@@ -11,19 +11,12 @@ class Header extends React.Component {
       user: props.user,
       open: false
     };
-    this.closeSideNavigation = this.closeSideNavigation.bind(this);
-    this.openSideNavigation = this.openSideNavigation.bind(this);
+    this.toggleSideNavigation = this.toggleSideNavigation.bind(this);
   }
 
-  closeSideNavigation() {
+  toggleSideNavigation() {
     this.setState({
-      open: false
-    });
-  }
-
-  openSideNavigation() {
-    this.setState({
-      open: true
+      open: !this.state.open
     });
   }
 
@@ -33,13 +26,11 @@ class Header extends React.Component {
         <AppBar
           title={constants.common.APP_TITLE}
           user={this.state.user}
-          onLeftIconButtonClick={this.openSideNavigation}
+          onLeftIconButtonClick={this.toggleSideNavigation}
         />
         <SideNavigation
           appTitle={constants.common.APP_TITLE}
           open={this.state.open}
-          closeSideNavigation={this.closeSideNavigation}
-          openSideNavigation={this.openSideNavigation}
         />
       </header>
     );

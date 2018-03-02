@@ -22,7 +22,7 @@ export const getUserLoginDetails = (payload) => {
           'success'
         );
         dispatch(loginUserData(data));
-        navigateToRoute('/main-dashboard');
+        navigateToRoute('/dashboard');
       } else {
         swal({
           type: 'error',

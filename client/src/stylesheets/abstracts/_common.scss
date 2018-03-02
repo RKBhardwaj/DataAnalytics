@@ -4,4 +4,56 @@ body {
   margin: 0;
   padding: 0;
   background: $gray-lighter;
+  overflow: hidden;
+}
+
+.error-box {
+  border: 1px solid #FF0000;
+  padding: 5px 10px 5px;
+  background: #ffd0d7;
+  margin-bottom: 10px;
+
+  ul {
+    padding: 0;
+    list-style: none;
+    li {
+      margin-left: 1em;
+      &::before {
+        content: "\2022"; 
+        color: red;
+        display: inline-block; 
+        width: 1em;
+        margin-left: -1em
+      }
+    }
+  }
+}
+
+.side-navigation {
+  position: absolute;
+  > div:first-child {
+    position: relative !important;
+    height: -webkit-fill-available !important;
+    overflow-y: auto
+  }
+}
+
+nav {
+  div.container {
+    width: 99% !important;
+    .navbar-header {
+      margin-left: 0;
+      padding-left: 0;
+      float: left;
+      font-weight: bold;
+    }
+    ul.nav.navbar-nav {
+      float: right;
+
+      ul.dropdown-menu {
+        right: 0;
+        left: auto;
+      }
+    }
+  }
 }

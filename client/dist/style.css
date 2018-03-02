@@ -1,7 +1,32 @@
 body {
   margin: 0;
   padding: 0;
-  background: #eeeeee; }
+  background: #eeeeee;
+  overflow: hidden; }
+
+.error-box {
+  border: 1px solid #FF0000;
+  padding: 5px 10px 5px;
+  background: #ffd0d7;
+  margin-bottom: 10px; }
+  .error-box ul {
+    padding: 0;
+    list-style: none; }
+    .error-box ul li {
+      margin-left: 1em; }
+      .error-box ul li::before {
+        content: "\2022";
+        color: red;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em; }
+
+.side-navigation {
+  position: absolute; }
+  .side-navigation > div:first-child {
+    position: relative !important;
+    height: -webkit-fill-available !important;
+    overflow-y: auto; }
 
 /*** push auto ***/
 /*** pseudo ***/

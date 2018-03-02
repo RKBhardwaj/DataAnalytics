@@ -19,3 +19,13 @@ export const getApiUrl = (link, params) => {
 export const navigateToRoute = (link) => {
   history.push(link);
 };
+
+export const getKeysWithBlankValues = (obj) => {
+  const list = [];
+  _.forEach(obj, (value, key) => {
+    if (value === '') {
+      list.push(key);
+    }
+  });
+  return list;
+};

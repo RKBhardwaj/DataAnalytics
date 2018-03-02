@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import LoginFrom from '../../views/login/LoginForm';
 import { getUserLoginDetails } from '../../../actions/LoginActions';
+import { getKeysWithBlankValues } from '../../../common/appUtils';
 
 @connect(store => ({
   loginDetails: store.LoginReducer.loginDetails
@@ -43,7 +44,7 @@ class LoginComponent extends Component {
     } else {
       this.setState({
         isError: true,
-        errorFields: _.filter(this.state.loginDetails, (o) => o === '')
+        errorFields: getKeysWithBlankValues(this.state.loginDetails)
       });
     }
   }
@@ -54,7 +55,7 @@ class LoginComponent extends Component {
         isAuthenticUser={this.state.isAuthenticUser}
         loginAttempt={this.state.loginAttempt}
         loginDetails={this.state.loginDetails}
-        errorFields={this.errorFields}
+        errorFields={this.state.errorFields}
         isError={this.state.isError}
         updateLoginDetails={this.updateLoginDetails}
         submitLoginForm={this.submitLoginForm}

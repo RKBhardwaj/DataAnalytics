@@ -10,18 +10,18 @@ const ErrorBox = (props) => {
   const showContent = show ? 'show' : 'hide';
 
   const FieldsWithError = (
-    fields.map((field) => {
+    fields.map((field, i) => {
       const fieldTitle = <b>{field}</b>;
       return (
-        <li>{fieldTitle} cannot be blank</li>
+        <li key={i}>{fieldTitle} cannot be blank</li>
       );
     })
   );
 
   return (
-    <div className={showContent}>
-      <h2>{constants.common.FORM_ERROR_HEADING}</h2>
-      <h4>{constants.common.FORM_ERROR_SUBHEADING}</h4>
+    <div className={`error-box ${showContent}`}>
+      <h4>{constants.common.FORM_ERROR_HEADING}</h4>
+      <h5>{constants.common.FORM_ERROR_SUBHEADING}</h5>
       <ul>
         {FieldsWithError}
       </ul>
