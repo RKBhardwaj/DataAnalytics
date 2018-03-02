@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import _ from 'lodash';
 import LoginFrom from '../../views/login/LoginForm';
 import { getUserLoginDetails } from '../../../actions/LoginActions';
 
@@ -14,7 +14,8 @@ class LoginComponent extends Component {
       isAuthenticUser: false,
       loginAttempt: 0,
       loginDetails: props.loginDetails,
-      isError: false
+      isError: false,
+      errorFields: []
     };
 
     this.updateLoginDetails = this.updateLoginDetails.bind(this);
@@ -41,7 +42,8 @@ class LoginComponent extends Component {
       this.props.dispatch(getUserLoginDetails({ username, password }));
     } else {
       this.setState({
-        isError: true
+        isError: true,
+        errorFields: _.filter(this.state.loginDetails, (o) => o === '')
       });
     }
   }
@@ -52,6 +54,7 @@ class LoginComponent extends Component {
         isAuthenticUser={this.state.isAuthenticUser}
         loginAttempt={this.state.loginAttempt}
         loginDetails={this.state.loginDetails}
+        errorFields={this.errorFields}
         isError={this.state.isError}
         updateLoginDetails={this.updateLoginDetails}
         submitLoginForm={this.submitLoginForm}

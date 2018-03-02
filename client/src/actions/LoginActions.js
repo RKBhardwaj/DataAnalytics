@@ -1,3 +1,4 @@
+import swal from 'sweetalert2';
 import * as types from './types';
 import service from '../common/service';
 import { getApiUrl } from '../common/appUtils';
@@ -14,8 +15,21 @@ export const getUserLoginDetails = (payload) => {
     try {
       const result = await service.post(url, payload);
       const { data } = result;
-      dispatch(loginUserData(data));
-      navigateToRoute('/main-dashboard');
+      if (!data.isError) {
+        swal(
+          'User authentication successfull',
+          '',
+          'success'
+        );
+        dispatch(loginUserData(data));
+        navigateToRoute('/main-dashboard');
+      } else {
+        swal({
+          type: 'error',
+          title: 'Oops...',
+          text: 'User authentication failed !!!',
+        });
+      }
     } catch (exception) {
       dispatch(loginUserData([]));
     }

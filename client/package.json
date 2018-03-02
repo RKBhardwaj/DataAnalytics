@@ -2,6 +2,12 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
+  },
+  "author": "Ravinder Bhardwaj",
+  "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
     "core-js": "^2.5.3",
@@ -22,6 +28,7 @@
     "react-router-redux": "^4.0.8",
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
+    "sweetalert2": "^7.12.15",
     "redux-thunk": "^2.2.0",
     "validate.js": "^0.12.0"
   },
