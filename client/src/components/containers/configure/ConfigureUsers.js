@@ -24,7 +24,7 @@ class ConfigureUsers extends Component {
       }],
       tableData: props.usess,
       activeKey: 'user',
-      newUser: {
+      userDetails: {
         username: '',
         password: '',
         email: '',
@@ -33,6 +33,7 @@ class ConfigureUsers extends Component {
     };
     this.createNewUser = this.createNewUser.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.changeUserDetails = this.changeUserDetails.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -45,14 +46,27 @@ class ConfigureUsers extends Component {
 
   createNewUser(e) {
     e.preventDefault();
-    const newUserObj = {
-      username: '',
-      password: '',
-      email: '',
-      roles: ''
-    };
+    const detailsObj = this.state.userDetails;
+    if (detailsObj.username !== '' && detailsObj.password !== '' && detailsObj.email !== ''
+      && detailsObj.roles !== '') {
+      this.props.dispatch(actions.saveUser(detailsObj));
+      this.setState({
+        userDetails: {
+          username: '',
+          password: '',
+          email: '',
+          roles: ''
+        }
+      });
+    }
+  }
+
+  changeUserDetails(e) {
+    const { name, value } = e.target;
+    const detailsObj = this.state.userDetails;
+    detailsObj[name] = value;
     this.setState({
-      newUser: newUserObj
+      userDetails: detailsObj
     });
   }
 
@@ -68,8 +82,9 @@ class ConfigureUsers extends Component {
         tableData={this.state.tableData}
         activeKey={this.state.activeKey}
         handleSelect={this.handleSelect}
-        newUser={this.state.newUser}
+        userDetails={this.state.userDetails}
         createNewUser={this.createNewUser}
+        changeUserDetails={this.changeUserDetails}
       />
     );
   }

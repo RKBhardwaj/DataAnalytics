@@ -1,2 +1,2 @@
 export { getUserLoginDetails } from './LoginActions';
-export { getUsers } from './UserActions';
+export { getUsers, saveUser } from './UserActions';

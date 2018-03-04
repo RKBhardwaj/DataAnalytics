@@ -17,7 +17,6 @@ module.exports = (app) => {
         if (username && password) {
             const loginObj = { "username": username, "password": md5(password) };
             const result = await Users.find(loginObj);
-            console.log(result);
             if (result) {
                 respObj.isError = false;
                 respObj.message = 'Valid User';

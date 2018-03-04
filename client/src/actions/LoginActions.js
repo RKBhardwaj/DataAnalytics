@@ -16,11 +16,11 @@ export const getUserLoginDetails = (payload) => {
       const result = await service.post(url, payload);
       const { data } = result;
       if (!data.isError) {
-        swal(
-          'User authentication successfull',
-          '',
-          'success'
-        );
+        swal({
+          type: 'success',
+          title: 'Great',
+          text: 'User authentication successful !!!',
+        });
         dispatch(loginUserData(data.responseData));
         navigateToRoute('/dashboard');
       } else {

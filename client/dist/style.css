@@ -4,6 +4,9 @@ body {
   background: #eeeeee;
   overflow: hidden; }
 
+.container {
+  width: 99% !important; }
+
 .error-box {
   border: 1px solid #ebccd1;
   padding: 5px 10px 5px;
@@ -77,10 +80,39 @@ nav div.container {
 .login-container {
   position: absolute;
   top: 15%;
-  width: 70%;
+  width: 70% !important;
   left: 15%;
   background: #fff;
   padding: 20px;
   -webkit-box-shadow: 1px 1px 5px 0px #f4f4f4;
   -moz-box-shadow: 1px 1px 5px 0px #f4f4f4;
   box-shadow: 1px 1px 5px 0px #f4f4f4; }
+
+table thead tr {
+  background: #ffffff !important; }
+  table thead tr th {
+    color: #333333 !important;
+    text-align: center !important;
+    font-weight: bold !important; }
+
+table tbody tr:nth-child(even) {
+  background: #ffffff !important; }
+
+table tbody tr:nth-child(odd) {
+  background: #f1f1f1 !important; }
+
+table tbody tr td {
+  color: #333333 !important; }
+  table tbody tr td div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; }
+    table tbody tr td div button {
+      border: none !important;
+      background: transparent !important;
+      outline: none !important; }
+      table tbody tr td div button svg {
+        color: #333333 !important;
+        cursor: pointer !important;
+        font-size: 12px; }
