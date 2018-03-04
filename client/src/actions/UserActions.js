@@ -7,14 +7,13 @@ const initUsersData = data => ({
   data
 });
 
-export const getUsers = (payload) => {
+export const getUsers = () => async (dispatch) => {
   const url = getApiUrl('users');
-  return (dispatch) => {
-    service.post(url, payload).then((res) => {
-      const { data } = res;
-      dispatch(initUsersData(data));
-    }).catch((resp) => {
-      dispatch(initUsersData([]));
-    });
-  };
+  const resp = await service.get(url);
+  if (resp) {
+    const { data } = resp;
+    dispatch(initUsersData(data.responseData));
+  } else {
+    dispatch(initUsersData([]));
+  }
 };

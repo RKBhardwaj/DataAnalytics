@@ -8,13 +8,9 @@ const responseObj = require('./createResonse').responseObj;
 const mongoose = require('mongoose');
 const md5 = require('md5');
 
-const Users = mongoose.model('Users');
+const Users = mongoose.model('users');
 
 module.exports = (app) => {
-    app.get('/api/current_user', (req, res) => {
-        res.send(req.user);
-    });
-
     app.post('/api/auth-login', async (req, res) => {
         const { username, password } = req.body;
         const respObj = Object.assign({}, responseObj);
@@ -23,17 +19,17 @@ module.exports = (app) => {
             const result = await Users.find(loginObj);
             console.log(result);
             if (result) {
-                respObj.isSuccess = true;
-                respObj.successMsg = 'Valid User';
+                respObj.isError = false;
+                respObj.message = 'Valid User';
                 respObj.responseData = result;
             } else {
                 respObj.isError = true;
-                respObj.errorMsg = 'Invalid User';
+                respObj.message = 'Invalid User';
                 respObj.responseData = [];
             }
         } else {
             respObj.isError = true;
-            respObj.errorMsg = 'Invalid user credentials';
+            respObj.message = 'Invalid user credentials';
         }
         res.send(respObj);
     });

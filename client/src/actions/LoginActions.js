@@ -21,7 +21,7 @@ export const getUserLoginDetails = (payload) => {
           '',
           'success'
         );
-        dispatch(loginUserData(data));
+        dispatch(loginUserData(data.responseData));
         navigateToRoute('/dashboard');
       } else {
         swal({
