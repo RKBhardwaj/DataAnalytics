@@ -19,6 +19,11 @@ const SideNavigation = (props) => {
     handleNestedListToggle
   } = props;
 
+  const handleNavigation = (link) => {
+    closeSideNavigation();
+    navigateToRoute(link);
+  };
+
   const getNestedItems = (id, items) => {
     const sid = id;
     return items.map((item) => {
@@ -28,7 +33,7 @@ const SideNavigation = (props) => {
           key={item.id}
           primaryText={menuText}
           leftIcon={item.leftIcon}
-          onClick={() => navigateToRoute(item.link)}
+          onClick={() => handleNavigation(item.link)}
         />
       );
     });

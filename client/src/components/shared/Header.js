@@ -42,6 +42,7 @@ class Header extends React.Component {
       leftIcon: <NavigationMenu />
     };
     this.toggleSideNavigation = this.toggleSideNavigation.bind(this);
+    this.closeSideNavigation = this.closeSideNavigation.bind(this);
   }
 
   toggleSideNavigation() {
@@ -59,6 +60,13 @@ class Header extends React.Component {
     }
   }
 
+  closeSideNavigation() {
+    this.setState({
+      open: !this.state.open,
+      leftIcon: <NavigationMenu />
+    });
+  }
+
   render() {
     return (
       <header>
@@ -73,6 +81,7 @@ class Header extends React.Component {
         <SideNavigation
           appTitle={constants.common.APP_TITLE}
           open={this.state.open}
+          closeSideNavigation={this.closeSideNavigation}
         />
       </header>
     );

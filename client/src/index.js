@@ -7,11 +7,15 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import App from './components/App';
 import configureStore from './store';
 import './stylesheets/main.scss';
+import Header from './components/shared/Header';
 
 ReactDOM.render(
   <Provider store={configureStore()}>
     <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-      <App />
+      <div>
+        <Header />
+        <App />
+      </div>
     </MuiThemeProvider>
   </Provider>,
   document.getElementById('root')

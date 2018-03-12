@@ -1,9 +1,9 @@
 .login-container {
 	position: absolute;
 	top: 15%;
-  width: 70% !important;
+	width: 70% !important;
+	background: #ffffff;
   left: 15%;
-	background: #fff;
 	padding: 20px;
 	@include box-shadow(1px, 1px, 5px, 0px, rgba(244, 244, 244, 1));
 }

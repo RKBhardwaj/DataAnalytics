@@ -12,7 +12,6 @@ import {
   Tabs,
   Tab
 } from 'react-bootstrap';
-import Header from '../../shared/Header';
 import TopNavBar from '../../shared/TopNavBar';
 import DataGrid from '../../shared/DataGrid';
 
@@ -40,7 +39,6 @@ const ConfigureUsersView = (props) => {
 
   return (
     <div>
-      <Header loggedInUser={user} />
       <TopNavBar titleName={moduleName} />
       <Grid>
         <Row id="user-roles">

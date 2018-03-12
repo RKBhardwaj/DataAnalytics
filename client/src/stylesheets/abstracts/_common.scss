@@ -99,3 +99,31 @@ nav {
     }
   }
 }
+
+.nav-button {
+  border: none;
+  outline: none;
+  background: transparent;
+
+  &.left {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &.right {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  svg {
+    font-size: $font-size-small;
+    color: $navbar-default-link-color !important;
+    
+    &:hover {
+      color: $navbar-default-link-hover-color;
+      background: $navbar-default-link-hover-bg;
+    }
+  }
+}

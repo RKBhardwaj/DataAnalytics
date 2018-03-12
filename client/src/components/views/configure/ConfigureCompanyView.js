@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../../shared/Header';
 import TopNavBar from '../../shared/TopNavBar';
 
 const ConfigureCompanyView = (props) => {
@@ -11,7 +10,6 @@ const ConfigureCompanyView = (props) => {
 
   return (
     <div>
-      <Header loggedInUser={user} />
       <TopNavBar titleName={moduleName} />
     </div>
   );

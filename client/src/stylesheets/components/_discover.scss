@@ -1,0 +1,25 @@
+.container {
+  .navigation-view {
+    background: $navbar-default-bg;
+    height: -webkit-fill-available !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+
+    &.hidebar {
+      width:5px;
+      box-shadow: 0 0 50px 0, rgba(240, 240, 240, 0.85);
+    }
+  }
+  .content-view {
+    padding: 10px 10px 10px 10px;
+    position: relative;
+
+    .chart-container {
+      .chart {
+        padding: 10px 10px 10px 10px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
