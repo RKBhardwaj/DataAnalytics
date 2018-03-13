@@ -12,7 +12,8 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client:dev": "npm run start:dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client:dev\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm install --only=dev --prefix client  && npm run build --prefix client"
   },
   "author": "Ravinder Bhardwaj",
