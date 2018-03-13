@@ -31,7 +31,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "start": "webpack --config webpack.dev.js && webpack-dev-server --open --config webpack.dev.js --progress --colors",
+    "start": "NODE_ENV=PROD && webpack --config webpack.dev.js && webpack-dev-server --open --config webpack.dev.js --progress --colors",
     "build": "webpack --config webpack.prod.js --progress --colors",
     "lint": "eslint --fix src/ -c .eslintrc.json --ext .jsx,.js"
   },
