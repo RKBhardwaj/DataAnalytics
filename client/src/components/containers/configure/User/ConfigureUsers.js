@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../../../actions';
-import ConfigureUsersView from '../../views/configure/ConfigureUsersView';
+import * as actions from '../../../../actions';
+import ConfigureUsersView from './views/ConfigureUsersView';
 
 @connect(store => ({
   loginDetails: store.LoginReducer.loginDetails,

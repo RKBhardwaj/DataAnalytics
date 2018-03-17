@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import TextField from 'material-ui/TextField';
-import TopNavBar from '../../shared/TopNavBar';
+import TopNavBar from '../../../../shared/TopNavBar';
 
 const ConfigureCompanyView = (props) => {
   const {

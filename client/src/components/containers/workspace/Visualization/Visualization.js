@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import VisualizationView from '../../views/workspace/VisualizationView';
+import VisualizationView from './views/VisualizationView';
 
 @connect(store => ({
   user: store.LoginReducer.loginDetails

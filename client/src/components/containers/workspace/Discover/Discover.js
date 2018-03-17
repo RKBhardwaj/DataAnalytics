@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import DiscoverView from '../../views/workspace/DiscoverView';
+import DiscoverView from './views/DiscoverView';
 
 @connect(store => ({
   user: store.LoginReducer.loginDetails

@@ -55,6 +55,18 @@ module.exports = {
     }]
   },
   resolve: {
+    alias: {
+      Source: path.join(__dirname, '/src'),
+      Tests: path.join(__dirname, '/tests'),
+      Shared: path.join(__dirname, '/src/components/shared'),
+      Actions: path.join(__dirname, '/src/actions'),
+      Reducers: path.join(__dirname, '/src/reducers'),
+      Common: path.join(__dirname, '/src/common'),
+      Store: path.join(__dirname, '/src/store'),
+      Configure: path.join(__dirname, '/src/components/containers/configure'),
+      Login: path.join(__dirname, '/src/components/containers/login'),
+      Workspace: path.join(__dirname, '/src/components/containers/workspace')
+    },
     extensions: ['.js', '.jsx', '.css', '.json'],
     symlinks: false
   },

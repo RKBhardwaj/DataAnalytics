@@ -10,7 +10,7 @@ import {
   ButtonGroup,
   Button
 } from 'react-bootstrap';
-import ErrorBox from '../../shared/ErrorBox';
+import ErrorBox from '../../../shared/ErrorBox';
 
 const LoginForm = (props) => {
   const {

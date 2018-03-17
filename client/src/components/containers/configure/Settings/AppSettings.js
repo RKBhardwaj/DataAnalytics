@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import AppSettingsView from '../../views/configure/AppSettingsView';
+import AppSettingsView from './views/AppSettingsView';
 
 @connect(store => ({
   user: store.LoginReducer.loginDetails

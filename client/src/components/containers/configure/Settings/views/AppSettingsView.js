@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col, Tabs, Tab } from 'react-bootstrap';
-import TopNavBar from '../../shared/TopNavBar';
+import TopNavBar from '../../../../shared/TopNavBar';
 
 const AppSettingsView = (props) => {
   const {

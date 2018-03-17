@@ -12,8 +12,8 @@ import {
   Tabs,
   Tab
 } from 'react-bootstrap';
-import TopNavBar from '../../shared/TopNavBar';
-import DataGrid from '../../shared/DataGrid';
+import TopNavBar from '../../../../shared/TopNavBar';
+import DataGrid from '../../../../shared/DataGrid';
 
 const ConfigureUsersView = (props) => {
   const {

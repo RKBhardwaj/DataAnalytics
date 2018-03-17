@@ -3,8 +3,8 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 import HardwareKeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
 
-import TopNavBar from '../../shared/TopNavBar';
-import DropDown from '../../shared/DropDown';
+import TopNavBar from '../../../../shared/TopNavBar';
+import DropDown from '../../../../shared/DropDown';
 
 const DiscoverView = (props) => {
   const {

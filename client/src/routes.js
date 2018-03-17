@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import LoginComponent from '../src/components/containers/login/LoginComponent';
+import LoginComponent from '../src/components/containers/login';
 import Dashboard from '../src/components/containers/workspace/Dashboard';
 import Visualization from '../src/components/containers/workspace/Visualization';
 import Discover from '../src/components/containers/workspace/Discover';
-import ConfigureCompany from '../src/components/containers/configure/ConfigureCompany';
-import ConfigureUsers from '../src/components/containers/configure/ConfigureUsers';
-import ConfigureNavigation from '../src/components/containers/configure/ConfigureNavigation';
-import AppSettings from '../src/components/containers/configure/AppSettings';
+import ConfigureCompany from '../src/components/containers/configure/Company';
+import ConfigureUsers from '../src/components/containers/configure/User';
+import ConfigureNavigation from '../src/components/containers/configure/Navigation';
+import AppSettings from '../src/components/containers/configure/Settings';
 
 const checkPath = (path) => {
   const isValidPath = path !== '/';

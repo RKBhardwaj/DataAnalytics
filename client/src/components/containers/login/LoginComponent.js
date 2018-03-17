@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import LoginFrom from '../../views/login/LoginForm';
 import { getUserLoginDetails } from '../../../actions/LoginActions';
 import { getKeysWithBlankValues } from '../../../common/appUtils';
+
+import LoginFrom from './views/LoginForm';
 
 @connect(store => ({
   loginDetails: store.LoginReducer.loginDetails

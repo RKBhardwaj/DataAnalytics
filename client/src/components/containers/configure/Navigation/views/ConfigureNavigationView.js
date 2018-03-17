@@ -1,5 +1,5 @@
 import React from 'react';
-import TopNavBar from '../../shared/TopNavBar';
+import TopNavBar from '../../../../shared/TopNavBar';
 
 const ConfigureNavigationView = (props) => {
   const {
