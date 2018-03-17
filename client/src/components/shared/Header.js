@@ -68,8 +68,9 @@ class Header extends React.Component {
   }
 
   render() {
+    const showHeder = window.location.pathname.indexOf('/login') === -1;
     return (
-      <header>
+      <header className={showHeder ? 'show' : 'hide'}>
         <AppBar
           className="header"
           title={constants.common.APP_TITLE}

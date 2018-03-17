@@ -10,18 +10,35 @@ import ConfigureUsers from '../src/components/containers/configure/ConfigureUser
 import ConfigureNavigation from '../src/components/containers/configure/ConfigureNavigation';
 import AppSettings from '../src/components/containers/configure/AppSettings';
 
+const checkPath = (path) => {
+  const isValidPath = path !== '/';
+  return isValidPath;
+};
+
+const ValidateRoute = ({
+  component: Component, validator, path, ...rest
+}) => (
+  <Route
+    {...rest}
+    render={props => (
+      checkPath(path) ? <Component {...props} /> : <Redirect to={{ pathname: '/login' }} />
+    )}
+  />
+);
+
+
 const Routes = () => (
   <div>
     <Switch>
-      <Route exact path="/" component={LoginComponent} />
-      <Route path="/login" component={LoginComponent} />
-      <Route path="/dashboard" component={Dashboard} />
-      <Route path="/visualization" component={Visualization} />
-      <Route path="/discover" component={Discover} />
-      <Route path="/configure-company" component={ConfigureCompany} />
-      <Route path="/configure-users" component={ConfigureUsers} />
-      <Route path="/configure-navigation" component={ConfigureNavigation} />
-      <Route path="/app-settings" component={AppSettings} />
+      <ValidateRoute exact path="/" component={LoginComponent} />
+      <ValidateRoute path="/login" component={LoginComponent} />
+      <ValidateRoute path="/dashboard" component={Dashboard} />
+      <ValidateRoute path="/visualization" component={Visualization} />
+      <ValidateRoute path="/discover" component={Discover} />
+      <ValidateRoute path="/configure-company" component={ConfigureCompany} />
+      <ValidateRoute path="/configure-users" component={ConfigureUsers} />
+      <ValidateRoute path="/configure-navigation" component={ConfigureNavigation} />
+      <ValidateRoute path="/app-settings" component={AppSettings} />
     </Switch>
   </div>
 );
