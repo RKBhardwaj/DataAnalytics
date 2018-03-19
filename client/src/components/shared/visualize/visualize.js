@@ -10,7 +10,7 @@ const visualize = (props) => {
     <div>
       Visualize chart
     </div>
-  );     
-}
+  );
+};
 
 export default visualize;

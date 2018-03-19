@@ -1,0 +1,39 @@
+.container {
+  .visualization-landing-page {
+    .visualization-list {
+      @include box-shadow(1px, 1px, 5px, 0px, rgba(244, 244, 244, 1));
+      margin: 0;
+      border-right: 1px solid #ccc;
+      padding-right: 20px;
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        
+        li {
+          font-size: 18px;
+          background: transparent;
+          border-bottom: 1px solid #ccc;
+          background: #ffffff;
+
+          button {
+            background: transparent;
+            outline: none;
+            border: none;
+            padding: 10px 0px 10px 15px;
+            width: 100%;
+            text-align: left;
+
+            &:hover {
+              color: $link-hover-color
+            }
+
+            i {
+              padding-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
