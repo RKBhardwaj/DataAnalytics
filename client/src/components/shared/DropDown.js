@@ -7,7 +7,8 @@ const DropDown = (props) => {
     id,
     name,
     onSelectHandler,
-    menuItems
+    menuItems,
+    additionalClass
   } = props;
 
   const MenuItems = menuItems.map(item => (
@@ -16,7 +17,7 @@ const DropDown = (props) => {
 
   return (
     <SplitButton
-      bsStyle={title.toLowerCase()}
+      bsStyle="default"
       title={title}
       name={name}
       id={id}

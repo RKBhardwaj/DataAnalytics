@@ -15,6 +15,10 @@ export const VISUALIZE_TYPES = [{
   title: 'Bar Chart',
   icon: 'fa-align-left'
 }, {
+  key: 'column-chart',
+  title: 'Column Chart',
+  icon: 'fa-bar-chart'
+}, {
   key: 'line-chart',
   title: 'Line Chart',
   icon: 'fa-line-chart'

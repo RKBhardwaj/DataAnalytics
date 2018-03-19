@@ -127,3 +127,25 @@ nav {
     }
   }
 }
+
+.object-finder {
+  .dropdown {
+    width: 100%;
+
+    button {
+      width: 95%;
+      text-align: left;
+
+      &.dropdown-toggle {
+        width: 5%;
+        text-align: center;
+      }
+    }
+
+    ul {
+      &.dropdown-menu {
+        width: 100%;
+      }
+    }
+  }
+}

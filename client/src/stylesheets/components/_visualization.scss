@@ -1,4 +1,7 @@
-.container {
+.visualization-container {
+  overflow: auto;
+  height: -webkit-fill-available;
+
   .visualization-landing-page {
     .visualization-list {
       @include box-shadow(1px, 1px, 5px, 0px, rgba(244, 244, 244, 1));

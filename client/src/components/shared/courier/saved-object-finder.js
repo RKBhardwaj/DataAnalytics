@@ -12,13 +12,15 @@ const SavedObjectFinder = (props) => {
   } = props;
 
   return (
-    <DropDown
-      title={title}
-      id={id}
-      name={name}
-      onSelectHandler={selectHandler}
-      menuItems={objectList}
-    />
+    <div className="object-finder">
+      <DropDown
+        title={title}
+        id={id}
+        name={name}
+        onSelectHandler={selectHandler}
+        menuItems={objectList}
+      />
+    </div>
   );
 };
 

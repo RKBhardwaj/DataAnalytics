@@ -20,7 +20,7 @@ const LandingPage = (props) => {
   ));
 
   return (
-    <Grid>
+    <Grid className="visualization-container">
       <Row className="visualization-landing-page">
         <Col lg={6} md={6} sm={12} xs={12}>
           <h3>Create new Visualization</h3>

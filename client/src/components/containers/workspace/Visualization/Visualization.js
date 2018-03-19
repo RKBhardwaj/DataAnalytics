@@ -5,7 +5,7 @@ import VisualizationView from './views/VisualizationView';
 
 @connect(store => ({
   user: store.LoginReducer.loginDetails,
-  visualizations: store.VisualizationReducer.vizList
+  // visualizations: store.VisualizationReducer.vizList
 }))
 class Visualization extends Component {
   constructor(props) {
@@ -38,7 +38,8 @@ class Visualization extends Component {
         user={this.state.user}
         chartSelectHandler={this.chartSelectHandler}
         visSelectHandler={this.visSelectHandler}
-        existingCharts={this.existingCharts}
+        existingCharts={this.state.existingCharts}
+        selectedChart={this.state.selectedChart}
       />
     );
   }
