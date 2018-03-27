@@ -1,7 +1,8 @@
 import React from 'react';
 import { Grid, Row } from 'react-bootstrap';
-import TopNavBar from '../../../../shared/TopNavBar';
 
+import TopNavBar from '../../../../shared/TopNavBar';
+import Panel from '../../Dashboard/views/panels/panel';
 import ReactGrid from '../../../../shared/ReactGrid';
 
 const DashboardView = (props) => {
@@ -16,6 +17,10 @@ const DashboardView = (props) => {
       <TopNavBar titleName={moduleName} />
       <Grid>
         <Row>
+          <Panel
+            user={user}
+            vizTitle="Hello"
+          />
           <ReactGrid />
         </Row>
       </Grid>

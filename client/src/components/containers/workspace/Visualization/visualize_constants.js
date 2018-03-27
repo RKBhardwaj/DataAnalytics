@@ -37,7 +37,7 @@ export const VISUALIZE_TYPES = [{
 }, {
   key: 'markdown',
   title: 'Markdown Widget',
-  icon: 'fa-comment-o'
+  icon: 'fa-code'
 }, {
   key: 'tag-cloud',
   title: 'Tag Cloud',
