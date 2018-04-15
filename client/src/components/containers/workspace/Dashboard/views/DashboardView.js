@@ -25,7 +25,11 @@ const DashboardView = (props) => {
 
   return (
     <div>
-      <TopNavBar titleName={moduleName} />
+      <TopNavBar
+        titleName={moduleName}
+        actionsItems={[]}
+        options={[]}
+      />
       <Grid>
         <Row>
           <Gridster

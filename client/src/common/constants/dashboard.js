@@ -19,10 +19,10 @@ export const GRID_DIMENSIONS = {
     xxs: 2
   },
   layout: {
-    lg: {},
-    md: {},
-    sm: {},
-    xs: {},
-    xxs: {}
+    lg: [],
+    md: [],
+    sm: [],
+    xs: [],
+    xxs: []
   }
 };

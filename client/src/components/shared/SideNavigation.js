@@ -58,9 +58,10 @@ const SideNavigation = (props) => {
 
   const isDocked = true;
   const drawerWidth = 300;
+  const showHideCls = open ? '' : 'hide';
 
   return (
-    <Drawer className="side-navigation" docked={isDocked} width={drawerWidth} open={open}>
+    <Drawer className={`side-navigation ${showHideCls}`} docked={isDocked} width={drawerWidth} open={open}>
       <List>
         {navigation}
       </List>

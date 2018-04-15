@@ -3,13 +3,13 @@ import { ButtonGroup, Button, Row, Col } from 'react-bootstrap';
 
 const PanelHeader = (props) => {
   const {
-    vizTitle
+    title
   } = props;
 
   return (
     <Row className="panel-heading">
       <Col lg={8} md={8} sm={12} xs={12}>
-        <h4>{vizTitle}</h4>
+        <h4>{title}</h4>
       </Col>
       <Col lg={4} md={4} sm={12} xs={12} className="pull-right">
         <ButtonGroup>

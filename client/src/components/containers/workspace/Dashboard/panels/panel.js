@@ -4,14 +4,13 @@ import PanelHeader from './panel-header';
 
 const Panel = (props) => {
   const {
-    user,
-    vizTitle
+    title
   } = props;
 
   return (
     <div className="panel">
       <PanelHeader
-        vizTitle={vizTitle}
+        title={title}
       />
     </div>
   );

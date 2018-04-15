@@ -44,3 +44,5 @@ const Gridster = (props) => {
     </ResponsiveReactGridLayout>
   );
 };
+
+export default Gridster;

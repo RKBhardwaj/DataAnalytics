@@ -3,8 +3,33 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 const TopNavBar = (props) => {
   const {
-    titleName
+    titleName,
+    actionsItems,
+    options
   } = props;
+
+  const navigationItems = actionsItems.map((action, i) => (
+    <NavItem key={i} eventKey={action} href="#">
+      {action.title}
+    </NavItem>
+  ));
+
+  const DropdownList = options.map((option, i) => (
+    <MenuItem key={i} eventKey={option}>Action</MenuItem>
+  ));
+
+  const NavigationDropdown = options.length > 0 ? (
+    <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+      {DropdownList}
+    </NavDropdown>
+  ) : '';
+
+  const Navigations = actionsItems.length > 0 || options.length > 0 ? (
+    <Nav>
+      {navigationItems}
+      {NavigationDropdown}
+    </Nav>
+  ) : '';
 
   return (
     <Navbar>
@@ -13,21 +38,7 @@ const TopNavBar = (props) => {
           {titleName}
         </Navbar.Brand>
       </Navbar.Header>
-      <Nav>
-        <NavItem eventKey={1} href="#">
-          Link
-        </NavItem>
-        <NavItem eventKey={2} href="#">
-          Link
-        </NavItem>
-        <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-          <MenuItem eventKey={3.1}>Action</MenuItem>
-          <MenuItem eventKey={3.2}>Another action</MenuItem>
-          <MenuItem eventKey={3.3}>Something else here</MenuItem>
-          <MenuItem divider />
-          <MenuItem eventKey={3.4}>Separated link</MenuItem>
-        </NavDropdown>
-      </Nav>
+      {Navigations}
     </Navbar>
   );
 };
