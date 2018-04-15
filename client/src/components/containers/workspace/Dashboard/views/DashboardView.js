@@ -2,12 +2,23 @@ import React from 'react';
 import { Grid, Row } from 'react-bootstrap';
 
 import TopNavBar from '../../../../shared/TopNavBar';
-import Panel from '../../Dashboard/views/panels/panel';
-import ReactGrid from '../../../../shared/ReactGrid';
+import Gridster from '../directives/grid';
 
 const DashboardView = (props) => {
   const {
-    user
+    user,
+    dashboardViewMode,
+    createChildUiState,
+    onPanelRemoved,
+    panels,
+    getVisClickHandler,
+    getVisBrushHandler,
+    saveState,
+    toggleExpand,
+    dashboardObject,
+    fixedDashboard,
+    dashboardQuery,
+    addUsageStatistics
   } = props;
 
   const moduleName = 'Dashboard';
@@ -17,11 +28,20 @@ const DashboardView = (props) => {
       <TopNavBar titleName={moduleName} />
       <Grid>
         <Row>
-          <Panel
-            user={user}
-            vizTitle="Hello"
+          <Gridster
+            dashboardViewMode={dashboardViewMode}
+            createChildUiState={createChildUiState}
+            onPanelRemoved={onPanelRemoved}
+            panels={panels}
+            getVisClickHandler={getVisClickHandler}
+            getVisBrushHandler={getVisBrushHandler}
+            saveState={saveState}
+            toggleExpand={toggleExpand}
+            dashboardObject={dashboardObject}
+            fixedDashboard={fixedDashboard}
+            dashboardQuery={dashboardQuery}
+            addUsageStatistics={addUsageStatistics}
           />
-          <ReactGrid />
         </Row>
       </Grid>
     </div>

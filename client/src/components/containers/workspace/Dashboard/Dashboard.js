@@ -10,14 +10,67 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      LoginUserDetails: props.user
+      LoginUserDetails: props.user,
+      dashboardViewMode: 'edit',
+      createChildUiState: {},
+      onPanelRemoved: {},
+      panels: [{
+        title: 'title 1'
+      }, {
+        title: 'title 2',
+      }],
+      saveState: {},
+      dashboardObject: {},
+      fixedDashboard: [],
+      dashboardQuery: '',
+      addUsageStatistics: ''
     };
+
+    this.getVisClickHandler = this.getVisClickHandler.bind(this);
+    this.getVisBrushHandler = this.getVisBrushHandler.bind(this);
+    this.toggleExpand = this.toggleExpand.bind(this);
+  }
+
+  getVisClickHandler() {
+    this.props.dispatch();
+  }
+
+  getVisBrushHandler() {
+    this.props.dispatch();
+  }
+
+  toggleExpand() {
+    this.props.dispatch();
   }
 
   render() {
+    const {
+      LoginUserDetails,
+      dashboardViewMode,
+      createChildUiState,
+      onPanelRemoved,
+      panels,
+      saveState,
+      dashboardObject,
+      fixedDashboard,
+      dashboardQuery,
+      addUsageStatistics
+    } = this.state;
     return (
       <DashboardView
-        user={this.state.LoginUserDetails}
+        user={LoginUserDetails}
+        dashboardViewMode={dashboardViewMode}
+        createChildUiState={createChildUiState}
+        onPanelRemoved={onPanelRemoved}
+        panels={panels}
+        getVisClickHandler={this.getVisClickHandler}
+        getVisBrushHandler={this.getVisBrushHandler}
+        saveState={saveState}
+        toggleExpand={this.toggleExpand}
+        dashboardObject={dashboardObject}
+        fixedDashboard={fixedDashboard}
+        dashboardQuery={dashboardQuery}
+        addUsageStatistics={addUsageStatistics}
       />
     );
   }
