@@ -11,7 +11,7 @@ const Panel = (props) => {
   const gridCls = 'react-grid-item react-draggable cssTransforms react-resizable';
 
   return (
-    <div className={`panel ${gridCls}`} key={key}>
+    <div className={`${gridCls}`} key={key}>
       <PanelHeader
         title={title}
       />
