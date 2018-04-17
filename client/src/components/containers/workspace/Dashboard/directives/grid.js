@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-
-import constants from '../../../../../common/constants';
 import { PanelUtils } from '../panels/panel_utils';
 import Panel from '../panels/panel';
 import GridsterView from '../views/gridsterView';
