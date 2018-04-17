@@ -16,14 +16,14 @@ class Dashboard extends Component {
       onPanelRemoved: {},
       panels: [{
         title: 'title 1',
-        positionX: 1,
-        positionY: 1,
+        xPos: 1,
+        yPos: 1,
         sizeX: 6,
         sizeY: 6
       }, {
         title: 'title 2',
-        positionX: 7,
-        positionY: 1,
+        xPos: 7,
+        yPos: 1,
         sizeX: 6,
         sizeY: 6
       }],
