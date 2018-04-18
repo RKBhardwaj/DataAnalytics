@@ -19,7 +19,7 @@ class Gridster extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      layouts: { lg: [] },
+      layouts: { lg: [], md: [] },
       items: []
     };
   }
@@ -37,7 +37,7 @@ class Gridster extends Component {
       />
     ));
     this.setState({
-      layouts: { lg: layouts },
+      layouts: { lg: layouts, md: layouts },
       items
     });
   }

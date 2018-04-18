@@ -1,5 +1,7 @@
 import React from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
+import 'react-grid-layout/css/styles.css';
+import 'react-resizable/css/styles.css';
 import constants from '../../../../../common/constants';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
