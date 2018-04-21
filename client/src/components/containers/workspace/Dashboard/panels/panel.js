@@ -1,19 +1,25 @@
 import React from 'react';
 
 import PanelHeader from './panel-header';
+import Visualize from '../../../../shared/visualize/Visualize';
 
 const Panel = (props) => {
   const {
-    key,
-    title
+    ele,
+    onRemoveItem,
   } = props;
 
-  const gridCls = 'react-grid-item react-draggable cssTransforms react-resizable';
-
   return (
-    <div className={`${gridCls}`} key={key}>
+    <div className="panel">
       <PanelHeader
-        title={title}
+        key={ele}
+        title={ele.title}
+        onRemoveItem={onRemoveItem}
+      />
+      <Visualize
+        viz=""
+        type=""
+        data={[]}
       />
     </div>
   );

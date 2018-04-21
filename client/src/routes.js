@@ -9,6 +9,7 @@ import ConfigureCompany from '../src/components/containers/configure/Company';
 import ConfigureUsers from '../src/components/containers/configure/User';
 import ConfigureNavigation from '../src/components/containers/configure/Navigation';
 import AppSettings from '../src/components/containers/configure/Settings';
+import * as ROUTES from '../src/common/constants/routes';
 
 const checkPath = (path) => {
   const isValidPath = path !== '/';
@@ -21,7 +22,7 @@ const ValidateRoute = ({
   <Route
     {...rest}
     render={props => (
-      checkPath(path) ? <Component {...props} /> : <Redirect to={{ pathname: '/login' }} />
+      checkPath(path) ? <Component {...props} /> : <Redirect to={{ pathname: `${ROUTES.LOGIN}` }} />
     )}
   />
 );
@@ -31,14 +32,14 @@ const Routes = () => (
   <div>
     <Switch>
       <ValidateRoute exact path="/" component={LoginComponent} />
-      <ValidateRoute path="/login" component={LoginComponent} />
-      <ValidateRoute path="/dashboard" component={Dashboard} />
-      <ValidateRoute path="/visualization" component={Visualization} />
-      <ValidateRoute path="/discover" component={Discover} />
-      <ValidateRoute path="/configure-company" component={ConfigureCompany} />
-      <ValidateRoute path="/configure-users" component={ConfigureUsers} />
-      <ValidateRoute path="/configure-navigation" component={ConfigureNavigation} />
-      <ValidateRoute path="/app-settings" component={AppSettings} />
+      <ValidateRoute path={ROUTES.LOGIN} component={LoginComponent} />
+      <ValidateRoute path={ROUTES.DASHBOARD} component={Dashboard} />
+      <ValidateRoute path={ROUTES.VISUALIZATION} component={Visualization} />
+      <ValidateRoute path={ROUTES.DISCOVER} component={Discover} />
+      <ValidateRoute path={ROUTES.CONFIGURE_COMPANY} component={ConfigureCompany} />
+      <ValidateRoute path={ROUTES.CONFIGURE_USER} component={ConfigureUsers} />
+      <ValidateRoute path={ROUTES.CONFIGURE_NAVIGATION} component={ConfigureNavigation} />
+      <ValidateRoute path={ROUTES.APP_SETTINGS} component={AppSettings} />
     </Switch>
   </div>
 );

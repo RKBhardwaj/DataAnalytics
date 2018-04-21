@@ -3,7 +3,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import LandingPage from './LandingPage';
 import TopNavBar from '../../../../shared/TopNavBar';
 import AggEditor from '../../../../shared/visualize/AggEditor';
-import visualie from '../../../../shared/visualize/visualize';
+import Visualize from '../../../../shared/visualize/Visualize';
 
 const VisualizationView = (props) => {
   const {

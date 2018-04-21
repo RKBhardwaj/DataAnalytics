@@ -1,51 +1,43 @@
 import React from 'react';
-import { Grid, Row } from 'react-bootstrap';
-
+import { Grid, Row, Col } from 'react-bootstrap';
+import _ from 'lodash';
 import TopNavBar from '../../../../shared/TopNavBar';
 import Gridster from '../directives/grid';
+import * as dashConstant from '../../../../../common/constants/dashboard';
 
 const DashboardView = (props) => {
   const {
-    user,
-    dashboardViewMode,
-    createChildUiState,
-    onPanelRemoved,
     panels,
-    getVisClickHandler,
-    getVisBrushHandler,
-    saveState,
-    toggleExpand,
-    dashboardObject,
-    fixedDashboard,
-    dashboardQuery,
-    addUsageStatistics
+    actionsItems
   } = props;
 
   const moduleName = 'Dashboard';
+
+  const dashboardContent = _.size(panels) > 0 ? (
+    <Gridster
+      panels={panels}
+    />
+  ) : (
+    <div className="no-vis-container">
+      <span>{dashConstant.NO_VIS_ADDED}</span>
+    </div>
+  );
+
+  const showDarkTheme = false;
+  const dashboardTheme = showDarkTheme ? 'dark-theme' : 'light-theme';
 
   return (
     <div>
       <TopNavBar
         titleName={moduleName}
-        actionsItems={[]}
+        actionsItems={actionsItems}
         options={[]}
       />
-      <Grid>
+      <Grid className={`dashboard-container ${dashboardTheme}`}>
         <Row>
-          <Gridster
-            dashboardViewMode={dashboardViewMode}
-            createChildUiState={createChildUiState}
-            onPanelRemoved={onPanelRemoved}
-            panels={panels}
-            getVisClickHandler={getVisClickHandler}
-            getVisBrushHandler={getVisBrushHandler}
-            saveState={saveState}
-            toggleExpand={toggleExpand}
-            dashboardObject={dashboardObject}
-            fixedDashboard={fixedDashboard}
-            dashboardQuery={dashboardQuery}
-            addUsageStatistics={addUsageStatistics}
-          />
+          <Col lg={12} md={12} sm={12} xs={12}>
+            {dashboardContent}
+          </Col>
         </Row>
       </Grid>
     </div>

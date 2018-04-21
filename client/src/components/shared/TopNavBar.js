@@ -9,7 +9,7 @@ const TopNavBar = (props) => {
   } = props;
 
   const navigationItems = actionsItems.map((action, i) => (
-    <NavItem key={i} eventKey={action} href="#">
+    <NavItem key={i} eventKey={action} onClick={action.clickHandler}>
       {action.title}
     </NavItem>
   ));

@@ -10,75 +10,41 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      LoginUserDetails: props.user,
-      dashboardViewMode: 'edit',
-      createChildUiState: {},
-      onPanelRemoved: {},
-      panels: [{
-        title: 'title 1',
-        xPos: 1,
-        yPos: 1,
-        sizeX: 6,
-        sizeY: 6
-      }, {
-        title: 'title 2',
-        xPos: 7,
-        yPos: 1,
-        sizeX: 6,
-        sizeY: 6
-      }],
-      saveState: {},
-      dashboardObject: {},
-      fixedDashboard: [],
-      dashboardQuery: '',
-      addUsageStatistics: ''
+      panels: [],
+      actionsItems: [],
+      dashboard: {}
     };
-
-    this.getVisClickHandler = this.getVisClickHandler.bind(this);
-    this.getVisBrushHandler = this.getVisBrushHandler.bind(this);
-    this.toggleExpand = this.toggleExpand.bind(this);
   }
 
-  getVisClickHandler() {
-    this.props.dispatch();
+  addVisualization(title) {
+    const { panels } = this.state;
+    panels.push({
+      title
+    });
+
+    this.setState({
+      panels
+    });
   }
 
-  getVisBrushHandler() {
-    this.props.dispatch();
-  }
-
-  toggleExpand() {
-    this.props.dispatch();
+  saveDashboard() {
+    const { dashboard } = this.state;
+    dashboard.title = '';
+    dashboard.companyId = '';
+    dashboard.option.showDarkTheme = false;
+    dashboard.panels = this.state.panels;
+    this.props.dispatch(this.state.dashboard);
   }
 
   render() {
     const {
-      LoginUserDetails,
-      dashboardViewMode,
-      createChildUiState,
-      onPanelRemoved,
       panels,
-      saveState,
-      dashboardObject,
-      fixedDashboard,
-      dashboardQuery,
-      addUsageStatistics
+      actionsItems
     } = this.state;
     return (
       <DashboardView
-        user={LoginUserDetails}
-        dashboardViewMode={dashboardViewMode}
-        createChildUiState={createChildUiState}
-        onPanelRemoved={onPanelRemoved}
         panels={panels}
-        getVisClickHandler={this.getVisClickHandler}
-        getVisBrushHandler={this.getVisBrushHandler}
-        saveState={saveState}
-        toggleExpand={this.toggleExpand}
-        dashboardObject={dashboardObject}
-        fixedDashboard={fixedDashboard}
-        dashboardQuery={dashboardQuery}
-        addUsageStatistics={addUsageStatistics}
+        actionsItems={actionsItems}
       />
     );
   }

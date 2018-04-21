@@ -1,0 +1,19 @@
+.dashboard-container {
+  &.dark-theme {
+    background: $gray-base;
+    color: #ffffff;
+  }
+
+  &.light-theme {
+    background: #ffffff;
+  }
+
+  .no-vis-container{
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

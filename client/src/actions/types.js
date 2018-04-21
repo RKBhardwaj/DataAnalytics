@@ -1,2 +1,7 @@
 export const GET_USERS = 'GET_USERS';
 export const LOGIN_USER = 'LOGIN_USER';
+export const SUCCESS_SAVE = 'SUCCESS_SAVE';
+export const UNSUCCESS_SAVE = 'UNSUCCESS_SAVE';
+export const GET_DASHBOARD = 'GET_DASHBOARD';
+export const SAVE_DASHBOARD = 'SAVE_DASHBOARD';
+export const GET_ALL_DASHBOARDS = 'GET_ALL_DASHBOARDS';

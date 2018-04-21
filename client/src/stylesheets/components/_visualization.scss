@@ -40,3 +40,13 @@
     }
   }
 }
+
+.panel {
+  height: 100%;
+  .panel-heading {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 1px solid #cccccc;
+  }
+}

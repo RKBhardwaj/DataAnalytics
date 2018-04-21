@@ -4,5 +4,8 @@ export const apis = {
   saveUser: '/api/save-user',
   deleteUser: '/api/delete-user',
   updateUser: '/api/update-user',
-  user: '/api/get-user-details'
+  user: '/api/get-user-details',
+  getDashboards: '/api/get-dashboards',
+  saveDashboard: '/api/save-dashboard',
+  getDashboard: '/api/get-dashboard'
 };
