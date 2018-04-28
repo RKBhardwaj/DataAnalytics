@@ -2,13 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define our dataset schema
-const CompanySchema = new Schema({
+const SettingsSchema = new Schema({
   name: String,
   companyId: String,
-  timeCongiguration: String,
-  dataSource: String,
-  shortName: String
+  visState: String,
+  searchStr: String,
+  filters: String,
+  dataSource: String
 });
 
 // Export the Mongoose model
-export default CompanySchema;
+export default SettingsSchema;

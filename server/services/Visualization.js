@@ -1,14 +1,33 @@
+const mongoose = require('mongoose');
+const Promise = require('promise');
+const modelObj = mongoose.model('visualization');
+
 class Visualization {
   static getAllVisualization() {
-    // TODO: Write get all Visualization method
+    return new Promise((resolve) => {
+      resolve (
+        modelObj.find({})
+      )
+    });
   }
 
-  static getVisualization() {
-    // TODO: Write get all Visualization method
+  static getVisualization(vizid) {
+    return new Promise((resolve) => {
+      resolve (
+        modelObj.find({ _id: vizid })
+      )
+    });
   }
 
-  static saveVisualization() {
-    // TODO: Write get all Visualization method
+  static saveVisualization(visObj) {
+    const vis = new modelObj({
+      title: visObj.title
+    });
+    return new Promise((resolve) => {
+      resolve (
+        vis.save()
+      )
+    });
   }
 }
 

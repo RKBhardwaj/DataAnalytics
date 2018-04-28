@@ -1,18 +1,52 @@
-import mongoose from 'mongoose';
-
-const Users = mongoose.model('users');
+const mongoose = require('mongoose');
+const Promise = require('promise');
+const UsersModel = mongoose.model('users');
 
 class Users {
+  static login(loginObj) {
+    return new Promise((resolve) => (
+      resolve(
+        UsersModel.find(loginObj)
+      )
+    ));
+  }
+
   static getAllUsers() {
-    // TODO: Write get all Users method
+    return new Promise((resolve) => {
+      resolve (
+        UsersModel.find({})
+      )
+    });
   }
 
-  static getUsers() {
-    // TODO: Write get all Users method
+  static getUser(userId) {
+    return new Promise((resolve) => {
+      resolve (
+        UsersModel.find({ _id: userId })
+      )
+    });
   }
 
-  static saveUsers() {
-    // TODO: Write get all Users method
+  static saveUser(userObj) {
+    const user = new UsersModel({
+      username: userObj.username,
+      password: userObj.updatedPassword,
+      email: userObj.email,
+      roles: userObj.roles
+    });
+    return new Promise((resolve) => {
+      resolve(
+        user.save()
+      )
+    });
+  }
+
+  static deleteUser(userId) {
+    return new Promise((resolve) => {
+      resolve(
+        Users.deleteOne({ _id: userId })
+      )
+    });
   }
 }
 

@@ -9,4 +9,4 @@ const NavigationSchema = new Schema({
 });
 
 // Export the Mongoose model
-module.exports = NavigationSchema;
+export default NavigationSchema;

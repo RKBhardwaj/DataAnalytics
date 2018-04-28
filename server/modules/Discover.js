@@ -9,3 +9,7 @@ export const GetSearch = (req, res, next) => {
 export const SaveSearch = (req, res, next) => {
   res.json();
 };
+
+export const DeleteSearch = (req, res, next) => {
+  res.json();
+};

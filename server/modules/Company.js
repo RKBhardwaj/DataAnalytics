@@ -9,3 +9,7 @@ export const GetComapny = (req, res, next) => {
 export const SaveComapny = (req, res, next) => {
   res.json();
 };
+
+export const DeleteCompany = (req, res, next) => {
+  res.json();
+};

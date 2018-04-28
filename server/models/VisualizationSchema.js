@@ -8,8 +8,8 @@ const VisualizationSchema = new Schema({
   visState: String,
   searchStr: String,
   filters: String,
-  dataSource: String,
+  dataSource: String
 });
 
 // Export the Mongoose model
-module.exports = VisualizationSchema;
+export default VisualizationSchema;

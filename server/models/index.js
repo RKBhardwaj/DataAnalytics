@@ -1,19 +1,21 @@
 const mongoose = require('mongoose');
 
-const AnalysisSchema = require('./AnalysisSchema');
-const CompanySchema = require('./CompanySchema');
-const DashboardSchema = require('./DashboardSchema');
-const DatasetSchema = require('./DatasetSchema');
-const NavigationSchema = require('./NavigationSchema');
-const SearchSchema = require('./SearchSchema');
-const UserSchema = require('./UserSchema');
-const VisualizationSchema = require('./VisualizationSchema');
+import AnalysisSchema from './AnalysisSchema';
+import CompanySchema from './CompanySchema';
+import DashboardSchema from './DashboardSchema';
+import DatasetSchema from './DatasetSchema';
+import NavigationSchema from './NavigationSchema';
+import SearchSchema from './SearchSchema';
+import UserSchema from './UserSchema';
+import VisualizationSchema from './VisualizationSchema';
+import SettingsSchema from './SettingsSchema';
 
-mongoose.model('Analysis', AnalysisSchema, 'analysis');
+mongoose.model('Analysis', AnalysisSchema);
 mongoose.model('company', CompanySchema);
 mongoose.model('dashboard', DashboardSchema);
-mongoose.model('Dataset', DatasetSchema, 'datasetList');
+mongoose.model('Dataset', DatasetSchema);
 mongoose.model('navigation', NavigationSchema);
 mongoose.model('searches', SearchSchema);
 mongoose.model('users', UserSchema);
 mongoose.model('visualization', VisualizationSchema);
+mongoose.model('Settings', SettingsSchema);

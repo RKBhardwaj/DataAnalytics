@@ -1,14 +1,33 @@
+const mongoose = require('mongoose');
+const Promise = require('promise');
+const modelObj = mongoose.model('searches');
+
 class Discover {
   static getAllSearch() {
-    // TODO: Write get all Search method
+    return new Promise((resolve) => {
+      resolve (
+        modelObj.find({})
+      )
+    });
   }
 
-  static getSearch() {
-    // TODO: Write get all Search method
+  static getSearch(searchId) {
+    return new Promise((resolve) => {
+      resolve (
+        modelObj.find({ _id: searchId })
+      )
+    });
   }
 
-  static saveSearch() {
-    // TODO: Write get all Search method
+  static saveSearch(searchObj) {
+    const search = new modelObj({
+      title: searchObj.title
+    });
+    return new Promise((resolve) => {
+      resolve (
+        search.save()
+      )
+    });
   }
 }
 

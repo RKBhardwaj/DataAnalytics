@@ -9,3 +9,7 @@ export const GetNavigation = (req, res, next) => {
 export const SaveNavigation = (req, res, next) => {
   res.json();
 };
+
+export const DeleteNavigation = (req, res, next) => {
+  res.json();
+};

@@ -1,14 +1,33 @@
+const mongoose = require('mongoose');
+const Promise = require('promise');
+const modelObj = mongoose.model('navigation');
+
 class Navigation {
   static getAllNavigation() {
-    // TODO: Write get all Navigation method
+    return new Promise((resolve) => {
+      resolve (
+        modelObj.find({})
+      )
+    });
   }
 
-  static getNavigation() {
-    // TODO: Write get Navigation method
+  static getNavigation(navId) {
+    return new Promise((resolve) => {
+      resolve (
+        modelObj.find({ _id: navId })
+      )
+    });
   }
 
-  static saveNavigation() {
-    // TODO: Write save Navigation method
+  static saveNavigation(navObj) {
+    const nav = new modelObj({
+      title: navObj.title
+    });
+    return new Promise((resolve) => {
+      resolve (
+        nav.save()
+      )
+    });
   }
 }
 

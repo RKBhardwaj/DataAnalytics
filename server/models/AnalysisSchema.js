@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define our analysis schema
-const mongooseObject = {
+const AnalysisSchema = new Schema({
   name: String,
   description: String,
   companyId: String,
@@ -10,12 +10,6 @@ const mongooseObject = {
   createdDate: Date,
   lastModifiedDate: Date,
   softDelete: Boolean
-};
+});
 
-const collectionObject = {
-  collection: String
-};
-
-const AnalysisSchema = new Schema(mongooseObject, collectionObject);
-
-module.exports = AnalysisSchema;
+export default AnalysisSchema;

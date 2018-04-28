@@ -10,9 +10,7 @@ const DatasetSchema = new Schema({
   softDelete: Boolean,
   createdDate: Date,
   lastModified: Date
-}, {
-  collection: String
 });
 
 // Export the Mongoose model
-module.exports = DatasetSchema;
+export default DatasetSchema;

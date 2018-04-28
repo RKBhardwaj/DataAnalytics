@@ -5,10 +5,10 @@ const Schema = mongoose.Schema;
  * @description User schema
  */
 const UserSchema = new Schema({
-    username: String,
-    password: String,   
-    email: String,
-    roles: [String],
+  username: String,
+  password: String,
+  email: String,
+  roles: [String]
 });
 
-module.exports = UserSchema;
+export default UserSchema;

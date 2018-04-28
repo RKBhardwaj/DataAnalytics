@@ -9,7 +9,7 @@ const initUsersData = data => ({
 });
 
 export const getUsers = () => async (dispatch) => {
-  const url = getApiUrl('users');
+  const url = getApiUrl('getAllUsers');
   const resp = await service.get(url);
   if (resp) {
     const { data } = resp;

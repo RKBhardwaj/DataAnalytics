@@ -9,3 +9,7 @@ export const GetVisualization = (req, res, next) => {
 export const SaveVisualization = (req, res, next) => {
   res.json();
 };
+
+export const DeleteVisualization = (req, res, next) => {
+  res.json();
+};

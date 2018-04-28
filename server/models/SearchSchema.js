@@ -11,4 +11,4 @@ const SearchSchema = new Schema({
 });
 
 // Export the Mongoose model
-module.exports = SearchSchema;
+export default SearchSchema;

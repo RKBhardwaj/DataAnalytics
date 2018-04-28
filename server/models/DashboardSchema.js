@@ -14,4 +14,4 @@ const DashboardSchema = new Schema({
 });
 
 // Export the Mongoose model
-module.exports = DashboardSchema;
+export default DashboardSchema;

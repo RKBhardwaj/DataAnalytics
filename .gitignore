@@ -1,3 +1,4 @@
 node_modules
+dist
 server/config/dev.js
 package-lock.json
