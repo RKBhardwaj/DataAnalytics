@@ -18,12 +18,12 @@ export const getUsers = () => async (dispatch) => {
       title: 'Greet',
       text: resp.data.message,
     });
-    dispatch(initUsersData(data.responseData));
+    dispatch(initUsersData(data.data));
   } else {
     swal({
       type: 'error',
       title: 'Oops...',
-      text: resp.data.message,
+      text: resp.data.data.msg,
     });
     dispatch(initUsersData([]));
   }
@@ -39,12 +39,12 @@ export const saveUser = payload => async (dispatch) => {
       title: 'Greet',
       text: resp.data.message,
     });
-    dispatch(initUsersData(data.responseData));
+    dispatch(initUsersData(data.data));
   } else {
     swal({
       type: 'error',
       title: 'Oops...',
-      text: resp.data.message,
+      text: resp.data.msg,
     });
     dispatch(initUsersData([]));
   }

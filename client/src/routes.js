@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import LoginComponent from '../src/components/containers/login';
@@ -12,12 +13,15 @@ import AppSettings from '../src/components/containers/configure/Settings';
 import * as ROUTES from '../src/common/constants/routes';
 
 const checkPath = (path) => {
-  const isValidPath = path !== '/';
-  return isValidPath;
+  const validRoutes = { ROUTES };
+  return !(path !== '/' && _.has(validRoutes.ROUTES, path));
 };
 
 const ValidateRoute = ({
-  component: Component, validator, path, ...rest
+  component: Component,
+  validator,
+  path,
+  ...rest
 }) => (
   <Route
     {...rest}

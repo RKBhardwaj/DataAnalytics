@@ -1,4 +1,6 @@
 export const SUCCESS_CODE = 200;
+export const SUCCESS = 'SUCCESS';
+export const FAILED =  'FAILED';
 export const SUCCESS_MSG = 'Success';
 export const FAILED_MSG = 'FAILED';
 export const NOT_FOUND_CODE = 400;

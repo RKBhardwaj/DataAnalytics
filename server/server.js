@@ -24,9 +24,9 @@ server.use(cookieSession({
 }));
 
 server.use('/api/auth', AuthRoutes);
-server.use((req, res, next) => {
-  requireLogin(req, res, next);
-});
+// server.use((req, res, next) => {
+//   requireLogin(req, res, next);
+// });
 server.use('/api', AppRoutes);
 
 

@@ -149,3 +149,20 @@ nav {
     }
   }
 }
+
+.navigation-bar {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  padding:15px;
+
+  .navigation-title {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .navigation-items {
+    font-size: 14px;
+  }
+}

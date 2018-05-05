@@ -14,6 +14,10 @@ class Dashboard extends Component {
       actionsItems: [],
       dashboard: {}
     };
+
+    this.addVisualization = this.addVisualization.bind(this);
+    this.saveDashboard = this.saveDashboard.bind(this);
+    this.deleteDashboard = this.deleteDashboard.bind(this);
   }
 
   addVisualization(title) {
@@ -36,6 +40,10 @@ class Dashboard extends Component {
     this.props.dispatch(this.state.dashboard);
   }
 
+  deleteDashboard() {
+    this.props.dispatch();
+  }
+
   render() {
     const {
       panels,
@@ -44,7 +52,10 @@ class Dashboard extends Component {
     return (
       <DashboardView
         panels={panels}
-        actionsItems={actionsItems}
+        showTopNavActions="true"
+        deleteDashboard={this.deleteDashboard}
+        saveDashboard={this.saveDashboard}
+        addVisualization={this.addVisualization}
       />
     );
   }

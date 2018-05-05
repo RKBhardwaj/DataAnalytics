@@ -4,42 +4,18 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 const TopNavBar = (props) => {
   const {
     titleName,
-    actionsItems,
-    options
+    topNavActions
   } = props;
 
-  const navigationItems = actionsItems.map((action, i) => (
-    <NavItem key={i} eventKey={action} onClick={action.clickHandler}>
-      {action.title}
-    </NavItem>
-  ));
-
-  const DropdownList = options.map((option, i) => (
-    <MenuItem key={i} eventKey={option}>Action</MenuItem>
-  ));
-
-  const NavigationDropdown = options.length > 0 ? (
-    <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-      {DropdownList}
-    </NavDropdown>
-  ) : '';
-
-  const Navigations = actionsItems.length > 0 || options.length > 0 ? (
-    <Nav>
-      {navigationItems}
-      {NavigationDropdown}
-    </Nav>
-  ) : '';
-
   return (
-    <Navbar>
-      <Navbar.Header>
-        <Navbar.Brand>
-          {titleName}
-        </Navbar.Brand>
-      </Navbar.Header>
-      {Navigations}
-    </Navbar>
+    <div className="navigation-bar">
+      <div className="navigation-title">
+        {titleName}
+      </div>
+      <div className="navigation-items">
+        {topNavActions}
+      </div>
+    </div>
   );
 };
 

@@ -8,6 +8,8 @@ import {
     API_RESPONSE,
     SERVER_ERROR_MSG,
     FAILED_MSG,
+    SUCCESS,
+    FAILED,
     SUCCESS_CODE,
     SUCCESS_MSG,
     NOT_FOUND_CODE,
@@ -28,17 +30,11 @@ export const Login = (req, res, next) => {
 
   const loginObj = { username: username, password: md5(password) };
   Users.login(loginObj).then((response) => {
-    res.status(SUCCESS_CODE).send(Object.assign(
-      API_RESPONSE,
-      {},
-      msg = 'User is valid', status = SUCCESS_MSG, data = response
-    ));
+    const respObj = { ...API_RESPONSE, data: response, status: SUCCESS, msg: SUCCESS_MSG};
+    res.status(SUCCESS_CODE).send(respObj);
   }).catch((error) => {
-    res.status(SERVER_ERROR_CODE).send(Object.assign(
-      API_RESPONSE,
-      {},
-      msg = SERVER_ERROR_MSG, status = FAILED_MSG, data = {}
-    ));
+    const errObj = { ...API_RESPONSE, data: {}, status: FAILED, msg: FAILED_MSG};
+    res.status(SERVER_ERROR_CODE).send(errObj);
   });
 };
 
@@ -50,17 +46,11 @@ export const Login = (req, res, next) => {
  */
 export const GetAllUsers = (req, res, next) => {
   Users.getAllUsers().then((response) => {
-    res.status(SUCCESS_CODE).send(Object.assign(
-      API_RESPONSE,
-      {},
-      msg = 'User is valid', status = SUCCESS_MSG, data = response
-    ));
+    const respObj = { ...API_RESPONSE, data: response, status: SUCCESS, msg: SUCCESS_MSG};
+    res.status(SUCCESS_CODE).send(respObj);
   }).catch((error) => {
-    res.status(SERVER_ERROR_CODE).send(Object.assign(
-      API_RESPONSE,
-      {},
-      msg = SERVER_ERROR_MSG, status = FAILED_MSG, data = {}
-    ));
+    const errObj = { ...API_RESPONSE, data: {}, status: FAILED, msg: FAILED_MSG};
+    res.status(SERVER_ERROR_CODE).send(errObj);
   });
 };
 
@@ -73,17 +63,11 @@ export const GetAllUsers = (req, res, next) => {
 export const GetUser = (req, res, next) => {
   const userId = req.body.userId;
   Users.getUser(userId).then((response) => {
-    res.status(SUCCESS_CODE).send(Object.assign(
-      API_RESPONSE,
-      {},
-      msg = 'User is valid', status = SUCCESS_MSG, data = response
-    ));
+    const respObj = { ...API_RESPONSE, data: response, status: SUCCESS, msg: SUCCESS_MSG};
+    res.status(SUCCESS_CODE).send(respObj);
   }).catch((error) => {
-    res.status(SERVER_ERROR_CODE).send(Object.assign(
-      API_RESPONSE,
-      {},
-      msg = SERVER_ERROR_MSG, status = FAILED_MSG, data = {}
-    ));
+    const errObj = { ...API_RESPONSE, data: {}, status: FAILED, msg: FAILED_MSG};
+    res.status(SERVER_ERROR_CODE).send(errObj);
   });
 };
 
@@ -107,24 +91,15 @@ export const SaveUser = (req, res, next) => {
   };
   Users.saveUser(userObj).then((response) => {
     Users.getAllUsers().then((result) => {
-      res.status(SUCCESS_CODE).send(Object.assign(
-        API_RESPONSE,
-        {},
-        msg = 'User is valid', status = SUCCESS_MSG, data = response
-      ));
+      const respObj = { ...API_RESPONSE, data: response, status: SUCCESS, msg: SUCCESS_MSG};
+    res.status(SUCCESS_CODE).send(respObj);;
     }).catch((error) => {
-      res.status(SERVER_ERROR_CODE).send(Object.assign(
-        API_RESPONSE,
-        {},
-        msg = SERVER_ERROR_MSG, status = FAILED_MSG, data = {}
-      ));
+      const errObj = { ...API_RESPONSE, data: {}, status: FAILED, msg: FAILED_MSG};
+    res.status(SERVER_ERROR_CODE).send(errObj);
     });
   }).catch((error) => {
-    res.status(SERVER_ERROR_CODE).send(Object.assign(
-      API_RESPONSE,
-      {},
-      msg = SERVER_ERROR_MSG, status = FAILED_MSG, data = {}
-    ));
+    const errObj = { ...API_RESPONSE, data: {}, status: FAILED, msg: FAILED_MSG};
+    res.status(SERVER_ERROR_CODE).send(errObj);
   });
 };
 
@@ -141,24 +116,15 @@ export const DeleteUser = (req, res, next) => {
 
   Users.deleteUser(userId).then((response) => {
     Users.getAllUsers().then((result) => {
-      res.status(SUCCESS_CODE).send(Object.assign(
-        API_RESPONSE,
-        {},
-        msg = 'User is valid', status = SUCCESS_MSG, data = response
-      ));
+      const respObj = { ...API_RESPONSE, data: response, status: SUCCESS, msg: SUCCESS_MSG};
+    res.status(SUCCESS_CODE).send(respObj);
     }).catch((error) => {
-      res.status(SERVER_ERROR_CODE).send(Object.assign(
-        API_RESPONSE,
-        {},
-        msg = SERVER_ERROR_MSG, status = FAILED_MSG, data = {}
-      ));
+      const errObj = { ...API_RESPONSE, data: {}, status: FAILED, msg: FAILED_MSG};
+    res.status(SERVER_ERROR_CODE).send(errObj);
     });
   }).catch((error) => {
-    res.status(SERVER_ERROR_CODE).send(Object.assign(
-      API_RESPONSE,
-      {},
-      msg = SERVER_ERROR_MSG, status = FAILED_MSG, data = {}
-    ));
+    const errObj = { ...API_RESPONSE, data: {}, status: FAILED, msg: FAILED_MSG};
+    res.status(SERVER_ERROR_CODE).send(errObj);
   });
 };
 
@@ -181,30 +147,18 @@ export const UpdateUser = (req, res, next) => {
     user.roles = roles;
     Users.saveUser(user).then((response) => {
       Users.getAllUsers().then((result) => {
-        res.status(SUCCESS_CODE).send(Object.assign(
-          API_RESPONSE,
-          {},
-          msg = 'User is valid', status = SUCCESS_MSG, data = response
-        ));
+        const respObj = { ...API_RESPONSE, data: response, status: SUCCESS, msg: SUCCESS_MSG};
+    res.status(SUCCESS_CODE).send(respObj);
       }).catch((error) => {
-        res.status(SERVER_ERROR_CODE).send(Object.assign(
-          API_RESPONSE,
-          {},
-          msg = SERVER_ERROR_MSG, status = FAILED_MSG, data = {}
-        ));
+        const errObj = { ...API_RESPONSE, data: {}, status: FAILED, msg: FAILED_MSG};
+    res.status(SERVER_ERROR_CODE).send(errObj);
       });
     }).catch((error) => {
-      res.status(SERVER_ERROR_CODE).send(Object.assign(
-        API_RESPONSE,
-        {},
-        msg = SERVER_ERROR_MSG, status = FAILED_MSG, data = {}
-      ));
+      const errObj = { ...API_RESPONSE, data: {}, status: FAILED, msg: FAILED_MSG};
+    res.status(SERVER_ERROR_CODE).send(errObj);
     });
   }).catch((error) => {
-    res.status(SERVER_ERROR_CODE).send(Object.assign(
-      API_RESPONSE,
-      {},
-      msg = SERVER_ERROR_MSG, status = FAILED_MSG, data = {}
-    ));
+    const errObj = { ...API_RESPONSE, data: {}, status: FAILED, msg: FAILED_MSG};
+    res.status(SERVER_ERROR_CODE).send(errObj);
   });
 };

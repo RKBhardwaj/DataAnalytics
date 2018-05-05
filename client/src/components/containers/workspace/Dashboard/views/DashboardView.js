@@ -1,14 +1,21 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, ButtonGroup, Button } from 'react-bootstrap';
 import _ from 'lodash';
 import TopNavBar from '../../../../shared/TopNavBar';
+import TopNavActionItems from '../../../../shared/TopNavActionItems';
 import Gridster from '../directives/grid';
-import * as dashConstant from '../../../../../common/constants/dashboard';
+import constants from '../../../../../common/constants';
 
 const DashboardView = (props) => {
   const {
     panels,
-    actionsItems
+    showTopNavActions,
+    deleteDashboard,
+    saveDashboard,
+    addVisualization,
+    showDashboardList,
+    downloadDashboard,
+    showDashboardInfo
   } = props;
 
   const moduleName = 'Dashboard';
@@ -19,19 +26,31 @@ const DashboardView = (props) => {
     />
   ) : (
     <div className="no-vis-container">
-      <span>{dashConstant.NO_VIS_ADDED}</span>
+      <span>{constants.dashboard.NO_VIS_ADDED}</span>
     </div>
   );
 
   const showDarkTheme = false;
   const dashboardTheme = showDarkTheme ? 'dark-theme' : 'light-theme';
+  const actionsItems = [
+    { ...constants.common.LIST_ITEMS, action: showDashboardList },
+    { ...constants.common.ADD_ITEM, action: addVisualization },
+    { ...constants.common.SAVE_ITEM, action: saveDashboard },
+    { ...constants.common.DOWNLOAD, action: downloadDashboard },
+    { ...constants.common.DELETE_ITEM, action: deleteDashboard },
+    { ...constants.common.HELP, action: showDashboardInfo },
+  ];
+  const topNavActions = showTopNavActions ? (
+    <TopNavActionItems
+      actionsItems={actionsItems}
+    />
+  ) : '';
 
   return (
     <div>
       <TopNavBar
         titleName={moduleName}
-        actionsItems={actionsItems}
-        options={[]}
+        topNavActions={topNavActions}
       />
       <Grid className={`dashboard-container ${dashboardTheme}`}>
         <Row>
