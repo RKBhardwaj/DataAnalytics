@@ -49,3 +49,14 @@ export const saveUser = payload => async (dispatch) => {
     dispatch(initUsersData([]));
   }
 };
+
+export const getRoles = () => async (dispatch) => {
+  const url = getApiUrl('getAllRoles');
+  const resp = await service.get(url);
+  if (resp) {
+    const { data } = resp;
+    dispatch(initUsersData(data.data));
+  } else {
+    dispatch(initUsersData([]));
+  }
+};

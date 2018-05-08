@@ -11,6 +11,7 @@ class ConfigureUsers extends Component {
   constructor(props) {
     super(props);
     this.props.dispatch(actions.getUsers());
+    this.props.dispatch(actions.getRoles());
     this.state = {
       user: props.loginDetails.username,
       columnData: [{

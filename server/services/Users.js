@@ -11,6 +11,14 @@ class Users {
     ));
   }
 
+  static getAllRoles() {
+    return new Promise((resolve) => {
+      resolve (
+        UsersModel.find({})
+      )
+    });
+  }
+
   static getAllUsers() {
     return new Promise((resolve) => {
       resolve (

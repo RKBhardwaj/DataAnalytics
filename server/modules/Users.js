@@ -38,6 +38,16 @@ export const Login = (req, res, next) => {
   });
 };
 
+export const GetAllRoles = (req, res, next) => {
+  Users.getAllRoles().then((response) => {
+    const respObj = { ...API_RESPONSE, data: response, status: SUCCESS, msg: SUCCESS_MSG};
+    res.status(SUCCESS_CODE).send(respObj);
+  }).catch((error) => {
+    const errObj = { ...API_RESPONSE, data: {}, status: FAILED, msg: FAILED_MSG};
+    res.status(SERVER_ERROR_CODE).send(errObj);
+  });
+};
+
 /**
  * @description
  * @param {*} req 

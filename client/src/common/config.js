@@ -1,5 +1,6 @@
 export const apis = {
   login: '/api/auth-login',
+  getAllRoles: '/api/get-roles',
   getAllUsers: '/api/get-users',
   saveUser: '/api/save-user',
   deleteUser: '/api/delete-user/:userId',

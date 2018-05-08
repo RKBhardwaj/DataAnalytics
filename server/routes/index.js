@@ -3,7 +3,7 @@ import { GetAllDashboards, GetDashboard, SaveDashboard, DeleteDashboard } from '
 import { GetAllSearches, GetSearch, SaveSearch, DeleteSearch } from '../modules/Discover';
 import { GetAllVisualizations, GetVisualization, SaveVisualization, DeleteVisualization } from '../modules/Visualization';
 import { GetAllComapnies, GetComapny, SaveComapny, DeleteCompany } from '../modules/Company';
-import { Login, GetAllUsers, GetUser, SaveUser, DeleteUser, UpdateUser } from '../modules/Users';
+import { Login, GetAllRoles, GetAllUsers, GetUser, SaveUser, DeleteUser, UpdateUser } from '../modules/Users';
 import { GetAllNavigations, GetNavigation, SaveNavigation, DeleteNavigation } from '../modules/Navigation';
 import { GetAllSettings, GetSettings, SaveSettings, DeleteSetting } from '../modules/AppSettings';
 
@@ -13,6 +13,7 @@ AuthRoutes.post('/auth-login', Login);
 
 const AppRoutes = Router();
 // User routes
+AppRoutes.get('/get-roles', GetAllRoles);
 AppRoutes.get('/get-users', GetAllUsers);
 AppRoutes.get('/get-user-details/:userId', GetUser);
 AppRoutes.get('/delete-user/:userId', DeleteUser);
